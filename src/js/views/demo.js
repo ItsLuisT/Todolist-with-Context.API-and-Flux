@@ -8,6 +8,14 @@ import "../../styles/demo.css";
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
 
+
+	function wrapperOfAction () {
+		e.preventDefault()
+		actions.changeColor
+
+		
+	}
+
 	return (
 		<div className="container">
 			<ul className="list-group">

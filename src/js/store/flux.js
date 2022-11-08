@@ -12,7 +12,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			tasks: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -37,6 +38,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			addTask: (tasks) => {
+				const store = getStore();
+					setStore({tasks: [...store.tasks, tasks] })
+
+			},
+			deleteTask: (i) => {
+				/* create delete task here */
+				const store = getStore();
+					
+				setStore({tasks: store.tasks.filter((item, index)=> {
+					return index != i;
+				})})
+
+					
+				//   function deleteLi(i) {
+				//     setInput((current) => {
+				//       return current.filter((item, index) => {
+				//         return index != i;
+				//       });
+				//     });
+
 			}
 		}
 	};
